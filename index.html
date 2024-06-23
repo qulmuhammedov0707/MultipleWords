@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qulmuhammedov's project</title>
+</head>
+<body>
+
+    <style>
+        .wrapper {
+        height: 100px;
+        display: grid;
+        place-items: center;
+        }
+
+        .typing-demo {
+         width: 22ch;
+         animation: typing 4s steps(22);
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid;
+        font-family: monospace;
+        font-size: 2em;
+        }
+
+        @keyframes typing {
+        from {
+            width: 0
+        }
+        }
+    
+        @keyframes blink {
+        50% {
+         border-color: transparent
+         }
+        }
+    .infoDiv{
+        display: grid;
+        place-items: center;
+    }
+    .info{
+        font-family: monospace;
+        font-size: 1.5em;
+    }
+
+head {.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+position: fixed;
+left: 0px;
+top: 0px;
+width: 100%;
+height: 100%;
+z-index: 9999;
+background: url(images/loader-64x/Preloader_2.gif) center no-repeat #fff;
+}
+
+}
+
+.button {
+display: inline-block;
+padding: 0.5em 1.0em;
+border-radius: 4px;
+background: #ffffff;
+font-family: sans-serif;
+font-size: 16px;
+cursor: pointer;
+border: 1px solid #000000;
+margin: 10px;
+transition: background 0.3s;
+}
+
+.button:hover {
+background-color: black;
+color: #fff;
+}
+
+.button:active,
+.button.is-checked {
+background-color: black;
+color: white;
+outline: none;
+}
+
+.button-group {
+margin: 20px 0;
+text-align: center;
+}
+
+.button-group:after {
+content: '';
+display: block;
+clear: both;
+}
+
+img {
+vertical-align: middle;
+}
+
+.img-responsive {
+display: block;
+max-width: 100%;
+height: auto;
+}
+
+.grid article {
+background-color: #FFFFFF;
+display: block;
+float: left;
+margin: 1%;
+width: 23%;
+}
+.textarea{
+    width: 200px;
+    height: 300px;
+    border-radius: 4px;
+}
+
+
+
+    </style>
+
+
+    <div class="wrapper">
+        <div class="typing-demo">
+            Assalomu alaykum!
+        </div>
+    </div>
+    <div class="infoDiv">
+        <h3 class="info">Siz bu web-saytda istalgan so'zni istalgancha yozilgan holatini buferga qabul qilib olasiz</h3>
+        <button class="button" id="button" data-filter=".space">Boshlash</button>
+        <br>
+        <textarea id="myTextarea" class="textarea" placeholder="Bu yerda natijani tekshiring"></textarea>
+        <br>
+        <button class="button" id="thanks" data-filter=".space">Rahmat, qulmuhammedov😘</button>
+    </div>
+
+
+
+
+    <script>
+        clipboardProject = () => {
+            let word = prompt(`Qaysi so'zni ko'paytiramiz?`)
+            let number = prompt(`Bu so'z nechta bo'lishi kerak?`)
+            copyToClipboard = () => {
+                let result = [];
+                for (let i = 1; i <= number; i++) {
+                    result.push(`${i}: ${word}`);
+                }
+
+                let resultString = result.join('\n');
+
+                navigator.clipboard.writeText(resultString)
+                alert(' Natija buferga saqlandi buferga saqlandi');
+            }
+            copyToClipboard()
+        }
+        youAreWelcome = () => {
+            alert('Arzimaydi🥰')
+        }
+        textareaAnimation = () => {
+            textarea.class = 'black'
+            alert('text')
+        }
+        document.getElementById('button').addEventListener('click', clipboardProject)
+        document.getElementById('thanks').addEventListener('click', youAreWelcome)
+        document.getElementById('myTextarea').addEventListener('click', function() {
+            navigator.clipboard.readText()
+                .then(text => {
+                    this.value = text;
+                })
+        });
+    </script>
+</body>
+</html>
